@@ -1,0 +1,33 @@
+allprojects {
+
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'https://maven.yinian.tech/public/' }
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+
+    idea {
+        module {
+            downloadSources = true
+            inheritOutputDirs = false
+            outputDir = file("build/classes/main/")
+            testOutputDir = file("build/classes/test/")
+        }
+    }
+
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        testCompile 'junit:junit:4.12'
+    }
+    
+}
