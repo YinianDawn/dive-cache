@@ -3,6 +3,6 @@ rootProject.name = 'dive-cache'
 // 缓存类
 include ':common'     // 统一接口
 include ':ehcache'    // 封装ehcache
-//include ':guava'      // 封装guava
+include ':guava'      // 封装guava
 //include ':redis'      // 封装redis
 //include ':mime'       // mime
