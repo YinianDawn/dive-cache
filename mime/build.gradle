@@ -1,0 +1,26 @@
+
+jar {
+    enabled = true
+    version = '0.0.1'
+}
+
+dependencies {
+    compile 'dive:cache-common:0.0.1'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.1.RELEASE'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'dive'
+            artifactId 'cache-mime'
+            version = '0.0.1'
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "$buildDir/repo"
+        }
+    }
+}
