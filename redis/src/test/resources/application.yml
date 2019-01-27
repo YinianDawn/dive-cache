@@ -1,0 +1,11 @@
+spring.redis:
+  host: redis.xxx.cn
+  port: 6379
+  password: 'xxxx'
+  encode: utf-8
+  database: 0
+  pool:
+    maxTotal: 600
+    timeBetweenEvictionRunsMillis: 30000
+    minEvictableIdleTimeMillis: 30000
+    testOnBorrow: true
