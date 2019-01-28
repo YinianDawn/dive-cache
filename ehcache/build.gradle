@@ -16,6 +16,7 @@ publishing {
             artifactId 'cache-encache'
             version = '0.0.1'
             from components.java
+            artifact sourcesJar
         }
     }
     repositories {

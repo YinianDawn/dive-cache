@@ -14,6 +14,7 @@ publishing {
             artifactId 'cache-common'
             version = '0.0.1'
             from components.java
+            artifact sourcesJar
         }
     }
     repositories {
