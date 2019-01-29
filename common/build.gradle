@@ -40,3 +40,8 @@ publishing {
         }
     }
 }
+
+task copyDocs(type: Copy) {
+    from './build/docs/javadoc/'
+    into "./build/repo/dive/cache-common/$version/javadoc"
+}
