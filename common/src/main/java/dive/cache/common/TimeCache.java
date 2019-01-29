@@ -3,14 +3,12 @@ package dive.cache.common;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
  * 缓存键值对数据, 可以对键值对设置存活时间
  * @author dawn
- * @date 2019/01/27 13:18
  * @param <K> 键的类型
  * @param <V> 值的类型
  */

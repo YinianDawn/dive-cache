@@ -18,7 +18,6 @@ import java.util.stream.Stream;
 /**
  * 一个用于缓存键值对数据的对象, 可以对键值对设置存活时间, 利用java原生Map和序列化实现
  * @author dawn
- * @date 2019/01/27 17:31
  * @param <K> 键的类型，需实现序列化接口，利用hashCode持久化，必须保证
  * @param <V> 值的类型，需实现序列化接口
  */
@@ -411,6 +410,7 @@ public class PersistCache<K extends Serializable, V extends Serializable>
      * 构造器
      * @param path 缓存路径
      * @param alias 缓存别名, 也是缓存路径下的下级文件夹名称
+     * @param name 键转字符串函数
      * @param delay 清理任务延时时间，毫秒
      * @param period 清理任务周期，毫秒
      */

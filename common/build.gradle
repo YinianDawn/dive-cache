@@ -1,7 +1,3 @@
-jar {
-    enabled = true
-    version = '0.0.1'
-}
 
 dependencies {
 
@@ -10,11 +6,32 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'dive'
-            artifactId 'cache-common'
-            version = '0.0.1'
+            artifactId = 'cache-common'
             from components.java
             artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'cache common'
+                description = 'cache common'
+                url = 'https://maven.yinian.tech/public'
+                licenses {
+                    license {
+                        name = 'GNU GENERAL PUBLIC LICENSE, Version 3'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dawn'
+                        name = 'dawn'
+                        email = 'dawn@yinian.tech'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/YinianDawn/dive-cache.git'
+                    url = 'https://github.com/YinianDawn/dive-cache'
+                }
+            }
         }
     }
     repositories {

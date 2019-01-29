@@ -1,9 +1,4 @@
 
-jar {
-    enabled = true
-    version = '0.0.1'
-}
-
 dependencies {
     compile 'dive:cache-common:0.0.1'
     testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.1.RELEASE'
@@ -12,11 +7,32 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'dive'
-            artifactId 'cache-mime'
-            version = '0.0.1'
+            artifactId = 'cache-mime'
             from components.java
             artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = 'cache mime'
+                description = 'cache mime'
+                url = 'https://maven.yinian.tech/public'
+                licenses {
+                    license {
+                        name = 'GNU GENERAL PUBLIC LICENSE, Version 3'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'dawn'
+                        name = 'dawn'
+                        email = 'dawn@yinian.tech'
+                    }
+                }
+                scm {
+                    connection = 'https://github.com/YinianDawn/dive-cache.git'
+                    url = 'https://github.com/YinianDawn/dive-cache'
+                }
+            }
         }
     }
     repositories {

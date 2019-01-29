@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
  * 仅保存键为字符串的形式，方便正则匹配
  * 需引入包 'org.springframework.boot:spring-boot-starter-data-redis:2.0.1.RELEASE'
  * @author dawn
- * @date 2019/01/27 17:17
  * @param <V> 值的类型, 需实现序列化接口
  */
 public class StringRedisCache<V extends Serializable> implements PersistCache<String, V> {

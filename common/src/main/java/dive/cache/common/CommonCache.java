@@ -8,7 +8,6 @@ import java.util.function.Supplier;
 /**
  * 一个用于缓存键值对数据的对象
  * @author dawn
- * @date 2019/01/27 13:18
  * @param <K> 键的类型
  * @param <V> 值的类型
  */

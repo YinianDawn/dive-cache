@@ -5,7 +5,6 @@ import java.util.concurrent.*;
 /**
  * 定时清除和公共方法
  * @author dawn
- * @date 2019/01/27 17:31
  */
 class CacheUtil {
 

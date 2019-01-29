@@ -7,7 +7,6 @@ import dive.cache.common.CommonCache;
  * 一个用于缓存键值对数据的对象, 利用ehcache实现
  * 需引入包 'com.google.guava:guava:27.0.1-jre'
  * @author dawn
- * @date 2019/01/27 13:18
  * @param <K> 键的类型
  * @param <V> 值的类型
  */

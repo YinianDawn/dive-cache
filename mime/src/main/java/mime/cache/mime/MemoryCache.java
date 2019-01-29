@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 /**
  * 一个用于缓存键值对数据的对象, 可以对键值对设置存活时间, 利用java原生Map实现
  * @author dawn
- * @date 2019/01/27 17:31
  * @param <K> 键的类型
  * @param <V> 值的类型
  */
