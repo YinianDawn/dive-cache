@@ -1,4 +1,4 @@
-package mime.cache.mime;
+package dive.cache.mime;
 
 import dive.cache.common.TimeCache;
 

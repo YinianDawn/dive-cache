@@ -1,4 +1,4 @@
-package mime.cache.redis;
+package dive.cache.redis;
 
 import dive.cache.common.PersistCache;
 import org.springframework.data.redis.core.RedisTemplate;

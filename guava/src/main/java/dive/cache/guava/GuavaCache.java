@@ -1,4 +1,4 @@
-package mime.cache.guava;
+package dive.cache.guava;
 
 import com.google.common.cache.LoadingCache;
 import dive.cache.common.CommonCache;

@@ -1,6 +1,6 @@
 package test.cache.ehcache;
 
-import mime.cache.ehcache.EhcacheCache;
+import dive.cache.ehcache.EhcacheCache;
 import org.ehcache.CacheManager;
 import org.ehcache.UserManagedCache;
 import org.ehcache.config.builders.CacheConfigurationBuilder;

@@ -1,4 +1,4 @@
-package mime.cache.ehcache;
+package dive.cache.ehcache;
 
 import dive.cache.common.CommonCache;
 import org.ehcache.Cache;

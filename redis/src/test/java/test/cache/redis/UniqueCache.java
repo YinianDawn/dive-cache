@@ -1,6 +1,6 @@
 package test.cache.redis;
 
-import mime.cache.redis.StringRedisCache;
+import dive.cache.redis.StringRedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;

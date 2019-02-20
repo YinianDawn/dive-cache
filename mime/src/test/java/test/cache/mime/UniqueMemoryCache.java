@@ -1,6 +1,6 @@
 package test.cache.mime;
 
-import mime.cache.mime.MemoryCache;
+import dive.cache.mime.MemoryCache;
 import org.springframework.stereotype.Component;
 
 @Component

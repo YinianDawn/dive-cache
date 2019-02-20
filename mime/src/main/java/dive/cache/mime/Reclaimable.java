@@ -1,4 +1,4 @@
-package mime.cache.mime;
+package dive.cache.mime;
 
 /**
  * 实现该接口回收空间的方法
