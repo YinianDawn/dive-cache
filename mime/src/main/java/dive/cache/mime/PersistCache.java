@@ -136,14 +136,30 @@ public class PersistCache<K extends Serializable, V extends Serializable>
     }
 
     /**
+     * 删除文件
+     * @param file file
+     */
+    private static void delete(File file) {
+        try {
+            if (file.exists()) {
+                file.delete();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * 删除持久化
      * @param name 带有路径的文件名
      */
     private void delete(String name) {
-        new File(name).deleteOnExit();
-        new File(name + SUFFIX_KEY).deleteOnExit();
-        new File(name + SUFFIX_EXPIRE).deleteOnExit();
+        delete(new File(name));
+        delete(new File(name + SUFFIX_KEY));
+        delete(new File(name + SUFFIX_EXPIRE));
     }
+
+
 
     /**
      * 移除
@@ -315,7 +331,7 @@ public class PersistCache<K extends Serializable, V extends Serializable>
         this.expires.clear();
         this.values.clear();
         this.keys.stream()
-                .map(k -> this.path + "/" + name(k))
+                .map(k -> this.path + "/" + this.name(k))
                 .forEach(this::delete);
         this.keys.clear();
     }
