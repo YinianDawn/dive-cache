@@ -1,6 +1,8 @@
 package dive.cache.mime;
 
 import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Map;
@@ -23,6 +25,8 @@ import java.util.stream.Stream;
  */
 public class PersistCache<K extends Serializable, V extends Serializable>
         implements dive.cache.common.PersistCache<K, V>, Reclaimable {
+
+    private static final char[] HEX_CODE_UPPER = "0123456789ABCDEF".toCharArray();
 
     /**
      * 定时器单例
@@ -61,8 +65,27 @@ public class PersistCache<K extends Serializable, V extends Serializable>
 
     /**
      * 默认情况下，键的持久化名称，每个键的转换结果应当唯一
+     * 默认是 hashCode_MD5前十位
+     * hashCode一样，md5前10也一样 那就过分了啊
      */
-    private Function<K, String> name = k -> String.valueOf(k.hashCode());
+    private Function<K, String> name = k -> {
+        if (null == k) {
+            return "null";
+        }
+        try {
+            byte[] plain = MessageDigest.getInstance("MD5").digest(k.toString().getBytes());
+            StringBuilder sb = new StringBuilder(plain.length << 1);
+            int max = 5 < plain.length ? 5 : plain.length;
+            for (int i = 0; i < max; i++) {
+                byte b = plain[i];
+                sb.append(HEX_CODE_UPPER[(b >> 4) & 0XF]).append(HEX_CODE_UPPER[b & 0XF]);
+            }
+            return k.hashCode() + "_" + sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "error_" + k.toString();
+    };
 
     /**
      * 已持久化的键

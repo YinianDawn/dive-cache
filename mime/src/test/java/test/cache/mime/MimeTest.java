@@ -126,7 +126,8 @@ public class MimeTest {
 
     @Test
     public void test4() {
-        PersistCache<Integer, Unique> cache = new PersistCache<>(".mime_cache", "test4", i -> String.valueOf(i), 5000, 5000);
+//        PersistCache<Integer, Unique> cache = new PersistCache<>(".mime_cache", "test4", i -> String.valueOf(i), 5000, 5000);
+        PersistCache<Integer, Unique> cache = new PersistCache<>(".mime_cache", "test4", null, 5000, 5000);
         Unique unique = new Unique(1L, "1", "1");
 
         for (int i = 0; i < 5000; i++) {
