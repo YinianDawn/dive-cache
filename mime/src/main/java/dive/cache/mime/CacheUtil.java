@@ -67,7 +67,7 @@ class CacheUtil {
                     instance = new CacheUtil();
                     // 守护线程模式，主线程结束则结束，不阻挡程序结束
                     instance.schedule = new ScheduledThreadPoolExecutor(1, new ThreadPoolExecutor.DiscardPolicy());
-                    instance.schedule.scheduleAtFixedRate(() -> instance.reclaim(), delay, period, TimeUnit.MILLISECONDS);
+                    instance.schedule.scheduleWithFixedDelay(() -> instance.reclaim(), delay, period, TimeUnit.MILLISECONDS);
                     Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                         // 停止定时器
                         instance.schedule.shutdown();

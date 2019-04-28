@@ -1,6 +1,6 @@
 
 dependencies {
-    compile 'dive:cache-common:0.0.1'
+    compile 'dive:cache-common:0.0.2'
     testCompile 'org.springframework.boot:spring-boot-starter-test:2.0.1.RELEASE'
 }
 
