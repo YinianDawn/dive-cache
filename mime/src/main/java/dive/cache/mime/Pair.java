@@ -13,7 +13,7 @@ public class Pair<K , V> implements Map.Entry<K, V> {
     private K key;
     private V value;
 
-    Pair(K key, V value) {
+    public Pair(K key, V value) {
         this.key = key;
         this.value = value;
     }
