@@ -102,7 +102,7 @@ public class MemoryCache<K, V> implements TimeCache<K, V>, Reclaimable {
      * @return 缓存个数
      */
     public int size() {
-        return (int) this.expires.values().stream()
+        return (int) this.expires.values().parallelStream()
                 .filter(CacheUtil::alive)
                 .count();
     }
