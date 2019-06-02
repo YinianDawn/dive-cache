@@ -447,6 +447,15 @@ public class PersistCache<K extends Serializable, V extends Serializable>
 
     /**
      * 构造器
+     * @param alias 缓存别名, 也是缓存路径下的下级文件夹名称
+     * @param name 键转字符串函数
+     */
+    public PersistCache(String alias, Function<K, String> name) {
+        this(".mime_cache", alias, name, CacheUtil.delay, CacheUtil.period);
+    }
+
+    /**
+     * 构造器
      * @param path 缓存路径
      * @param alias 缓存别名, 也是缓存路径下的下级文件夹名称
      * @param name 键转字符串函数
